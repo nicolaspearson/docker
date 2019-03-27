@@ -1,0 +1,31 @@
+version: "3.7"
+
+services:
+  mssql-db:
+    hostname: mssql
+    image: mssql/strong/2017:1.0
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mssql-db
+    stop_grace_period: 1m
+    expose:
+      - 1433
+      - 1439
+    ports:
+      - 1433:1433
+    volumes:
+      - ./db/backups:/backups
+      - ./db/initial:/initial
+    environment:
+      - ACCEPT_EULA=Y
+      - MSSQL_PID=Developer
+      - SA_PASSWORD=Masterkey1433
+      - MSSQL_USER=sa
+      - MSSQL_HOST=localhost
+      - MSSQL_PORT=1433
+      - CRON_SCHEDULE=*/10 * * * *
+      - DELETE_OLDER_THAN=1
+      - RESTORE_NOTIFY_PORT=1439
+      - BACKUP=true
+      - RESTORE=true

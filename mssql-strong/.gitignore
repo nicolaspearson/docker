@@ -1,0 +1,7 @@
+# Backup files
+/db/backups/**/*
+!/db/backups/.gitkeep
+
+# Initial files
+/db/initial/**/*
+!/db/initial/.gitkeep
