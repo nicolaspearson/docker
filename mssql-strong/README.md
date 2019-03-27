@@ -4,9 +4,9 @@ This repository contains docker files to setup MSSQL using [microsoft-mssql-serv
 
 ### Getting Started
 
-1.  Install docker by following the instructions on the [official Docker website](https://docs.docker.com/install/)
+1.  Install [docker](https://docs.docker.com/install/)
 2.  Install [docker compose](https://docs.docker.com/compose/install/)
-3.  Execute `docker-compose up`
+3.  Run `docker-compose up` from your terminal
 
 ### Build Image
 
